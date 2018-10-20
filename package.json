@@ -42,7 +42,7 @@
     "deploy": "gh-pages -d build",
     "eject": "react-scripts eject"
   },
-  "homepage": "http://voronianski.github.io/swapi-graphql-react-app",
+  "homepage": "https://voronianski.github.io/swapi-graphql-react-app",
   "husky": {
     "hooks": {
       "pre-commit": "pretty-quick --staged"
