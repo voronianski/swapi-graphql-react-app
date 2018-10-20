@@ -5,7 +5,6 @@ Enzyme.configure({ adapter: new Adapter() });
 
 const sessionStorageMock = {
   getItem: jest.fn(),
-  setItem: jest.fn(),
-  clear: jest.fn()
+  setItem: jest.fn()
 };
-global.sessionStorag = sessionStorageMock;
+global.sessionStorage = sessionStorageMock;
