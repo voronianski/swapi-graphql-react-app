@@ -28,10 +28,10 @@
   "devDependencies": {
     "enzyme": "^3.7.0",
     "enzyme-adapter-react-16": "^1.6.0",
-    "gh-pages": "^2.0.1",
     "husky": "^1.1.2",
     "prettier": "^1.14.3",
     "pretty-quick": "^1.8.0",
+    "surge": "^0.20.1",
     "waait": "^1.0.2"
   },
   "scripts": {
@@ -39,10 +39,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "surge ./build swapi-graphql-react-app.surge.sh",
     "eject": "react-scripts eject"
   },
-  "homepage": "https://voronianski.github.io/swapi-graphql-react-app",
   "husky": {
     "hooks": {
       "pre-commit": "pretty-quick --staged"

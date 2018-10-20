@@ -15,7 +15,7 @@ const App = () => (
   <Router>
     <div className="app">
       <Header />
-      <div className="container mb4">
+      <div className="container py4">
         <Switch>
           <Route exact path="/" component={Search} />
           <Route path="/person/:id" component={Person} />

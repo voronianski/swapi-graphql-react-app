@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 const Header = () => (
-  <header className="header relative mb3">
+  <header className="header">
     <a
       href="https://graphiql.graphcms.com/simple/v1/swapi"
       className="header-logo right"
