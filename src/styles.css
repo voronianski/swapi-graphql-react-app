@@ -49,6 +49,11 @@ body {
   margin-top: 5px;
   margin-right: 10px;
 }
+@media (max-width: 480px) {
+  .header-logo {
+    display: none;
+  }
+}
 .header-nav {
   margin-top: 7px;
   z-index: -1;
