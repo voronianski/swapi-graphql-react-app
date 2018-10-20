@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { withApollo } from "react-apollo";
 import gql from "graphql-tag";
+import qs from "querystring";
 
 import Title from "./Title";
 import PersonLink from "./PersonLink";
@@ -22,12 +23,22 @@ export const SearchQuery = gql`
 `;
 
 class Search extends Component {
-  state = {
-    searchText: "",
-    searchResults: [],
-    searching: false,
-    searchError: null
-  };
+  constructor(props) {
+    super();
+
+    const query = qs.parse(props.location.search.slice(1));
+
+    this.state = {
+      searchText: query.text || "",
+      searchResults: [],
+      searching: false,
+      searchError: null
+    };
+  }
+
+  componentDidMount() {
+    this.executeSearch();
+  }
 
   handleChange(event) {
     this.setState({
@@ -35,12 +46,25 @@ class Search extends Component {
     });
   }
 
-  async handleSearch(event) {
+  handleSearch(event) {
     event.preventDefault();
+    this.executeSearch();
+  }
 
-    const { searchText } = this.state;
+  handleClearSearch() {
+    this.setState({
+      searchText: "",
+      searchResults: []
+    });
+    this.props.history.push({
+      pathname: this.props.match.path
+    });
+  }
 
-    if (!searchText) {
+  async executeSearch() {
+    const { searchText, searching } = this.state;
+
+    if (!searchText || searching) {
       return;
     }
 
@@ -50,14 +74,18 @@ class Search extends Component {
         searchError: null
       });
 
-      const res = await this.props.client.query({
+      const { data } = await this.props.client.query({
         query: SearchQuery,
         variables: { searchText }
       });
 
       this.setState({
         searching: false,
-        searchResults: res.data.allPersons
+        searchResults: data.allPersons
+      });
+      this.props.history.push({
+        pathname: this.props.match.path,
+        search: `?text=${searchText}`
       });
     } catch (err) {
       this.setState({
@@ -91,6 +119,16 @@ class Search extends Component {
           >
             {this.state.searching ? "Searching..." : "Search"}
           </button>
+          {this.state.searchText ? (
+            <button
+              type="button"
+              className="search-form-clear-btn btn btn-outline blue mt2 ml2"
+              onClick={() => this.handleClearSearch()}
+              disabled={this.state.searching}
+            >
+              Clear
+            </button>
+          ) : null}
         </form>
 
         {this.state.searchError ? (

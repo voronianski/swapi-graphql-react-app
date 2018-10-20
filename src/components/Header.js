@@ -1,6 +1,8 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
+import logo from "../logo.svg";
+
 const Header = () => (
   <header className="header">
     <a
@@ -9,11 +11,7 @@ const Header = () => (
       target="_blank"
       rel="noopener noreferrer"
     >
-      <img
-        src="https://graphiql.graphcms.com/static/media/graphcms-logo.ab5d7cb9.svg"
-        alt="GraphCMS logo"
-        className="header-logo-image"
-      />
+      <img src={logo} alt="GraphCMS logo" className="header-logo-image" />
     </a>
     <nav className="header-nav center absolute top-0 left-0 right-0 bottom-0 clearfix h6 white">
       <NavLink
