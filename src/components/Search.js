@@ -26,10 +26,8 @@ class Search extends Component {
   constructor(props) {
     super();
 
-    const query = qs.parse(props.location.search.slice(1));
-
     this.state = {
-      searchText: query.text || "",
+      searchText: this.urlQuery(props).text || "",
       searchResults: [],
       searching: false,
       searchError: null
@@ -59,6 +57,16 @@ class Search extends Component {
     this.props.history.push({
       pathname: this.props.match.path
     });
+  }
+
+  urlQuery(props) {
+    props = props || this.props;
+
+    if (!props.location) {
+      return {};
+    }
+
+    return qs.parse(props.location.search.slice(1));
   }
 
   async executeSearch() {
