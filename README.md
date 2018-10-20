@@ -2,7 +2,7 @@
 
 > Single-page app that allows to search for all human characters in Star Wars saga.
 
-[<img src="https://graphcms.com/assets/cms/OG_Twitter-Blog-Swapi.png" alt="Powered by GraphCMS" width="500" />](https://graphiql.graphcms.com/simple/v1/swapi)
+[<img src="https://graphcms.com/assets/cms/OG_Twitter-Blog-Swapi.png" alt="Powered by GraphCMS" width="300" />](https://graphiql.graphcms.com/simple/v1/swapi)
 
 ## What's inside?
 
@@ -14,7 +14,7 @@
 
 ## Development
 
-This project was created with [Create-react-app](https://facebook.github.io/create-react-app/docs/getting-started).
+This project was created with [create-react-app](https://facebook.github.io/create-react-app/docs/getting-started).
 
 ```bash
 npm i
