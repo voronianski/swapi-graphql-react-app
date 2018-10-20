@@ -6,7 +6,7 @@
 
 [<img src="https://graphcms.com/assets/cms/OG_Twitter-Blog-Swapi.png" alt="Powered by GraphCMS" width="450" />](https://graphiql.graphcms.com/simple/v1/swapi)
 
-### [Demo](http://voronianski.github.io/swapi-graphql-react-app)
+### [Demo](https://swapi-graphql-react-app.surge.sh)
 
 ## What's inside?
 
