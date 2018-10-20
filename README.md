@@ -1,8 +1,12 @@
 # swapi-graphql-react-app
 
+[![Build Status](https://travis-ci.org/voronianski/swapi-graphql-react-app.svg?branch=master)](https://travis-ci.org/voronianski/swapi-graphql-react-app)
+
 > Single-page app that allows to search for all human characters in Star Wars saga.
 
-[<img src="https://graphcms.com/assets/cms/OG_Twitter-Blog-Swapi.png" alt="Powered by GraphCMS" width="300" />](https://graphiql.graphcms.com/simple/v1/swapi)
+[<img src="https://graphcms.com/assets/cms/OG_Twitter-Blog-Swapi.png" alt="Powered by GraphCMS" width="450" />](https://graphiql.graphcms.com/simple/v1/swapi)
+
+### [Demo](http://voronianski.github.io/swapi-graphql-react-app)
 
 ## What's inside?
 

@@ -8,7 +8,7 @@ describe("session util", () => {
   });
 
   it("should save person ids to sessionStorage", () => {
-    const ids = ['123', '456'];
+    const ids = ["123", "456"];
 
     sessionUtil.savePersonIds(ids);
 
