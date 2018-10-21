@@ -6,7 +6,7 @@ describe("visitedPersons reducer", () => {
     expect(visitedPersons(undefined, {})).toEqual([]);
   });
 
-  it("should handle ADD_VISITED_PERSON", () => {
+  it("should handle ADD_VISITED_PERSON and add ids on top", () => {
     expect(
       visitedPersons([], {
         type: types.ADD_VISITED_PERSON,
@@ -20,6 +20,13 @@ describe("visitedPersons reducer", () => {
         id: "456"
       })
     ).toEqual(["456", "123"]);
+
+    expect(
+      visitedPersons(["456", "123"], {
+        type: types.ADD_VISITED_PERSON,
+        id: "123"
+      })
+    ).toEqual(["123", "456"]);
   });
 
   it("should handle POPULATE_VISITED_PERSONS", () => {
